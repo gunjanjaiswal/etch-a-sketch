@@ -1,0 +1,27 @@
+body{
+    justify-self: center;
+}
+
+div#container{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 20px;
+    height: 416px;
+    width: 416px;
+    justify-content:stretch;
+    margin: 30px; 
+}
+
+
+#one,#two,#three,#four{
+    /* height: 102px; */
+    display: flex;
+    
+}
+
+#a,#b,#c,#d,#e,#f,#g,#h,#i,#j,#k,#l,#m,#n,#o,#p{
+    height:100px;
+    width:100px;
+    border: 2px solid black;
+}
