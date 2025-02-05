@@ -1,45 +1,51 @@
 const container= document.querySelector('#container');
-let i=1;
-const row1=document.createElement('div');
-row1.setAttribute('id','one');
-while(i<=4){
-    let square=document.createElement('div');
-    let idname=String.fromCharCode(96+i);
-    square.setAttribute('id',idname);
-    row1.appendChild(square);
-    i++;
-}
-container.appendChild(row1);
+let k=0;
+rownum=4;
+const btn=document.querySelector('#btn');
 
-const row2=document.createElement('div');
-row2.setAttribute('id','two');
-while(i<=8){
-    let square=document.createElement('div');
-    let idname=String.fromCharCode(96+i);
-    square.setAttribute('id',idname);
-    row2.appendChild(square);
-    i++;
-}
-container.appendChild(row2);
+btn.addEventListener('click',()=>{
+    container.innerHTML='';
+    gridsize= parseInt(prompt("Enter the grid size(should not be more than 100):"))
+    if(gridsize>100){
+        window.alert("Gridsize should be less than 100:");
+    }
+    rownum=gridsize;
+    for (let i = 1; i <=rownum; i++){
+        let row=document.createElement('div');
+        row.classList.add('row');
+        let idname=String.fromCharCode(48+i);
+        row.setAttribute('id',idname);
+        for (let j = 1; j <=rownum; j++){
+            let square=document.createElement('div');
+            square.classList.add('tile');
+            let idname=String.fromCharCode(96+(i+k+j-1));
+            square.setAttribute('id',idname);
+            row.appendChild(square);   
+        }
+        k=k+rownum-1;
+        container.appendChild(row);
+    }
 
-const row3=document.createElement('div');
-row3.setAttribute('id','three');
-while(i<=12){
-    let square=document.createElement('div');
-    let idname=String.fromCharCode(96+i);
-    square.setAttribute('id',idname);
-    row3.appendChild(square);
-    i++;
-}
-container.appendChild(row3);
+    const tile=document.querySelectorAll('.tile');
+    tile.forEach((item)=>{
+        item.addEventListener('mouseover',()=>{
+            let r= Math.round(Math.random()*255);
+            let g= Math.round(Math.random()*255);
+            let b= Math.round(Math.random()*255);
+            item.style=`background:rgb(${r},${g},${b});`
+        })
 
-const row4=document.createElement('div');
-row4.setAttribute('id','four');
-while(i<=16){
-    let square=document.createElement('div');
-    let idname=String.fromCharCode(96+i);
-    square.setAttribute('id',idname);
-    row4.appendChild(square);
-    i++;
-}
-container.appendChild(row4);
+        item.addEventListener('click',()=>{
+            item.style=`background:None;`
+        })
+    })
+})
+    
+
+
+
+
+
+
+
+

@@ -1,27 +1,42 @@
 body{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
     justify-self: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(247, 151, 201);
 }
 
 div#container{
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
     padding: 20px;
     height: 416px;
     width: 416px;
-    justify-content:stretch;
+    background-color: aliceblue;
     margin: 30px; 
 }
 
 
-#one,#two,#three,#four{
+#container .row{
     /* height: 102px; */
     display: flex;
-    
+    flex:1;  
 }
 
-#a,#b,#c,#d,#e,#f,#g,#h,#i,#j,#k,#l,#m,#n,#o,#p{
-    height:100px;
-    width:100px;
-    border: 2px solid black;
+.tile{
+    border: 2px solid rgb(255, 255, 255);
+    flex:1;
+}
+
+#btn{
+    border-radius: 5px;
+    height: 60px;
+    width: 350px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    background-color: rgba(255, 24, 128, 0.856);
+    
 }
